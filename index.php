@@ -1,528 +1,760 @@
 <?php
-  session_start();
+  /*session_start();
   if (!isset($_SESSION["user"])) {
     header("Location: login.php");
-  }
+  }*/
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Web Application | todo</title>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
-  <link rel="stylesheet" href="css/plugin.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="js/ie/respond.min.js" cache="false"></script>
-    <script src="js/ie/html5.js" cache="false"></script>
-    <script src="js/ie/fix.js" cache="false"></script>
-  <![endif]-->
-</head>
-<body>
-  <section class="hbox stretch">
-    <!-- .aside -->
-    <aside class="bg-primary aside-sm" id="nav">
-      <section class="vbox">
-        <header class="dker nav-bar nav-bar-fixed-top">
-          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
-            <i class="fa fa-bars"></i>
-          </a>
-          <a href="#" class="nav-brand" data-toggle="fullscreen">todo</a>
-          <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </header>
-        <section>
-          <!-- user -->
-          <div class="bg-success nav-user hidden-xs pos-rlt">
-            <div class="nav-avatar pos-rlt">
-              <a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown">
-                <img src="images/avatar.jpg" alt="" class="">
-                <span class="caret caret-white"></span>
-              </a>
-              <ul class="dropdown-menu m-t-sm animated fadeInLeft">
-              	<span class="arrow top"></span>
-                <li>
-                  <a href="#">Settings</a>
-                </li>
-                <li>
-                  <a href="profile.html">Profile</a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="badge bg-danger pull-right">3</span>
-                    Notifications
-                  </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="docs.html">Help</a>
-                </li>
-                <li>
-                  <a href="logout.php">Logout</a>
-                </li>
-              </ul>
-              <div class="visible-xs m-t m-b">
-                <a href="#" class="h3">John.Smith</a>
-                <p><i class="fa fa-map-marker"></i> London, UK</p>
-              </div>
-            </div>
-            <div class="nav-msg">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <b class="badge badge-white count-n">2</b>
-              </a>
-              <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
-                <div class="arrow left"></div>
-                <section class="panel bg-white">
-                  <header class="panel-heading">
-                    <strong>You have <span class="count-n">2</span> notifications</strong>
-                  </header>
-                  <div class="list-group">
-                    <a href="#" class="media list-group-item">
-                      <span class="pull-left thumb-sm">
-                        <img src="images/avatar.jpg" alt="John said" class="img-circle">
-                      </span>
-                      <span class="media-body block m-b-none">
-                        Use awesome animate.css<br>
-                        <small class="text-muted">28 Aug 13</small>
-                      </span>
-                    </a>
-                    <a href="#" class="media list-group-item">
-                      <span class="media-body block m-b-none">
-                        1.0 initial released<br>
-                        <small class="text-muted">27 Aug 13</small>
-                      </span>
-                    </a>
-                  </div>
-                  <footer class="panel-footer text-sm">
-                    <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                    <a href="#">See all the notifications</a>
-                  </footer>
-                </section>
-              </section>
-            </div>
-          </div>
-          <!-- / user -->
-          <!-- nav -->
-          <nav class="nav-primary hidden-xs">
-            <ul class="nav">
-              <li class="active">
-                <a href="index.html">
-                  <i class="fa fa-eye"></i>
-                  <span>Discover</span>
-                </a>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-flask"></i>
-                  <span>UI kit</span>
-                </a>
-                <ul class="dropdown-menu">                
-                  <li>
-                    <a href="buttons.html">Buttons</a>
-                  </li>
-                  <li>
-                    <a href="icons.html">
-                      <b class="badge pull-right">302</b>Icons
-                    </a>
-                  </li>
-                  <li>
-                    <a href="grid.html">Grid</a>
-                  </li>
-                  <li>
-                    <a href="widgets.html">
-                      <b class="badge bg-primary pull-right">8</b>Widgets
-                    </a>
-                  </li>
-                  <li>
-                    <a href="components.html">
-                      <b class="badge pull-right">18</b>Components
-                    </a>
-                  </li>
-                  <li>
-                    <a href="list.html">List groups</a>
-                  </li>
-                  <li>
-                    <a href="table.html">Table</a>
-                  </li>
-                  <li>
-                    <a href="form.html">Form</a>
-                  </li>
-                  <li>
-                    <a href="chart.html">Chart</a>
-                  </li>
-                  <li>
-                    <a href="calendar.html">Fullcalendar</a>
-                  </li>
-                  <li>
-                    <a href="portlet.html">Portlet</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-file-text"></i>
-                  <span>Pages</span>
-                </a>
-                <ul class="dropdown-menu">                
-                  <li>
-                    <a href="dashboard.html">Dashboard</a>                    
-                  </li>
-                  <li>
-                    <a href="dashboard-1.html">Dashboard one</a>              
-                  </li>
-                  <li>
-                    <a href="dashboard-2.html">Dashboard layout</a>
-                  </li>
-                  <li>
-                    <a href="analysis.html">Analysis</a>
-                  </li>
-                  <li>
-                    <a href="master.html">Master</a>
-                  </li>
-                  <li>
-                    <a href="maps.html">Maps</a>
-                  </li>
-                  <li>
-                    <a href="gallery.html">Gallery</a>              
-                  </li>
-                  <li>
-                    <a href="profile.html">Profile</a>
-                  </li>
-                  <li>
-                    <a href="blog.html">Blog</a>              
-                  </li>
-                  <li>
-                    <a href="invoice.html">Invoice</a>              
-                  </li>                  
-                  <li>
-                    <a href="signin.html">Signin page</a>
-                  </li>
-                  <li>
-                    <a href="signup.html">Signup page</a>
-                  </li>
-                  <li>
-                    <a href="404.html">404 page</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="mail.html">
-                  <b class="badge bg-primary pull-right">3</b>
-                  <i class="fa fa-envelope-o"></i>
-                  <span>Mail</span>
-                </a>
-              </li>
-              <li>
-                <a href="tasks.html">
-                  <i class="fa fa-tasks"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="notes.html">
-                  <i class="fa fa-pencil"></i>
-                  <span>Notes</span>
-                </a>
-              </li>
-              <li>
-                <a href="timeline.html">
-                  <i class="fa fa-clock-o"></i>
-                  <span>Timeline</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- / nav -->
-          <!-- note -->
-          <div class="bg-danger wrapper hidden-vertical animated fadeInUp text-sm">            
-              <a href="#" data-dismiss="alert" class="pull-right m-r-n-sm m-t-n-sm"><i class="fa fa-times"></i></a>
-              Hi, welcome to todo,  you can start here.
-          </div>
-          <!-- / note -->
-        </section>
-        <footer class="footer bg-gradient hidden-xs">
-          <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
-            <i class="fa fa-power-off"></i>
-          </a>
-          <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
-            <i class="fa fa-bars"></i>
-          </a>
-        </footer>
-      </section>
-    </aside>
-    <!-- /.aside -->
-    <!-- .vbox -->
-    <section id="content">
-      <section class="vbox">
-        <header class="header bg-white b-b">
-          <p>Welcome to todo application</p>
-        </header>
-        <section class="scrollable wrapper">
-          <div class="row">
-            <div class="col-lg-8">
-              <section class="panel">
-                <form>
-                  <textarea class="form-control input-lg no-border" rows="2" placeholder="What are you doing..."></textarea>
-                </form>
-                <footer class="panel-footer bg-light lter">
-                  <button class="btn btn-info pull-right">POST</button>
-                  <ul class="nav nav-pills">
-                    <li><a href="#"><i class="fa fa-location-arrow"></i></a></li>
-                    <li><a href="#"><i class="fa fa-camera"></i></a></li>
-                    <li><a href="#"><i class="fa fa-video-camera"></i></a></li>
-                    <li><a href="#"><i class="fa fa-microphone"></i></a></li>
-                  </ul>
-                </footer>
-              </section>
-              <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                  <section class="panel">
-                    <div class="panel-body">
-                      <div class="clearfix m-b">
-                        <small class="text-muted pull-right">5m ago</small>
-                        <a href="#" class="thumb-sm pull-left m-r">
-                          <img src="images/avatar.jpg" class="img-circle">
-                        </a>
-                        <div class="clear">
-                          <a href="#"><strong>Jonathan Omish</strong></a>
-                          <small class="block text-muted">San Francisco, USA</small>
-                        </div>
-                      </div>
-                      <p>
-                        There are a few easy ways to quickly get started with Bootstrap...
-                      </p>
-                      <small class="">
-                        <a href="#"><i class="fa fa-comment-o"></i> Comments (25)</a>
-                      </small>
-                    </div>
-                    <footer class="panel-footer pos-rlt">
-                      <span class="arrow top"></span>
-                      <form class="pull-out">
-                        <input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-                      </form>
-                    </footer>
-                  </section>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                  <section class="panel">
-                    <div class="panel-body">
-                      <div class="clearfix m-b">
-                        <small class="text-muted pull-right">1hr ago</small>
-                        <a href="#" class="thumb-sm pull-left m-r">
-                          <img src="images/avatar_default.jpg" class="img-circle">
-                        </a>
-                        <div class="clear">
-                          <a href="#"><strong>Mike Mcalidek</strong></a>
-                          <small class="block text-muted">Newyork, USA</small>
-                        </div>
-                      </div>
-                      <div class="pull-in bg-light clearfix m-b-n">
-                        <p class="m-t-sm m-b text-center animated bounceInDown">
-                          <i class="fa fa-map-marker text-danger fa fa-4x" data-toggle="tooltip" title="checked in at Newyork"></i>
-                        </p>
-                      </div>
-                    </div>
-                    <footer class="panel-footer pos-rlt">
-                      <span class="arrow top"></span>
-                      <form class="pull-out">
-                        <input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-                      </form>
-                    </footer>
-                  </section>
-                </div>
-              </div>
-              <section class="panel no-borders hbox">
-                <aside class="bg-info lter r-l text-center v-middle">
-                  <div class="wrapper">
-                    <i class="fa fa-dribbble fa fa-4x"></i>
-                    <p class="text-muted"><em>dribbble invitation</em></p>
-                  </div>
-                </aside>
-                <aside>
-                  <div class="pos-rlt">
-                    <span class="arrow left hidden-xs"></span>
-                    <div class="panel-body">                      
-                      <div class="clearfix m-b">
-                        <small class="text-muted pull-right">2 days ago</small>
-                        <a href="#" class="thumb-sm pull-left m-r">
-                          <img src="images/avatar.jpg" class="img-circle">
-                        </a>
-                        <div class="clear">
-                          <a href="#"><strong>Jonathan Omish</strong></a>
-                          <small class="block text-muted">San Francisco, USA</small>
-                        </div>
-                      </div>
-                      <p>
-                        Thank you for invite...
-                      </p>
-                      <small class="">
-                        <a href="#"><i class="fa fa-comment-o"></i> Comments (10)</a>
-                      </small>                    
-                    </div>
-                    <footer class="panel-footer">
-                      <form class="pull-out b-t">
-                        <input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-                      </form>
-                    </footer>
-                  </div>
-                </aside>
-              </section>
-              <section class="panel no-borders hbox">                
-                <aside>
-                  <div class="pos-rlt">
-                    <span class="arrow right hidden-xs"></span>
-                    <div class="panel-body">                    
-                      <div class="clearfix m-b">
-                        <small class="text-muted pull-right">2 days ago</small>
-                        <a href="#" class="thumb-sm pull-left m-r">
-                          <img src="images/avatar.jpg" class="img-circle">
-                        </a>
-                        <div class="clear">
-                          <a href="#"><strong>Jonathan Omish</strong></a>
-                          <small class="block text-muted">San Francisco, USA</small>
-                        </div>
-                      </div>
-                      <p>
-                        Flat design is more popular today. Google, Microsoft, Apple...
-                      </p>
-                      <small class="">
-                        <a href="#"><i class="fa fa-share"></i> Share (10)</a>
-                      </small>                    
-                    </div>
-                    <footer class="panel-footer">
-                      <form class="pull-out b-t">
-                        <input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-                      </form>
-                    </footer>
-                  </div>
-                </aside>
-                <aside class="bg-primary clearfix lter r-r text-right v-middle">
-                  <div class="wrapper h3 font-thin">
-                    7 things you need to know about the flat design
-                  </div>
-                </aside>
-              </section>
-              <div class="text-center m-b">
-                <i class="fa fa-spinner fa fa-spin"></i>
-              </div>
-            </div>
-            <div class="col-lg-4">
-               <section class="panel bg-info lter no-borders">
-                <div class="panel-body">
-                  <a class="pull-right" href="#"><i class="fa fa-map-marker"></i></a>
-                  <span class="h4">McLean, VA</span>
-                  <div class="text-center padder m-t">
-                    <span class="h1"><i class="fa fa-cloud text-muted"></i> 68°</span>
-                  </div>
-                </div>
-                <footer class="panel-footer lt">
-                  <div class="row">
-                    <div class="col-xs-4">
-                      <small class="text-muted block">Humidity</small>
-                      <span>56 %</span>
-                    </div>
-                    <div class="col-xs-4">
-                      <small class="text-muted block">Precip.</small>
-                      <span>0.00 in</span>
-                    </div>
-                    <div class="col-xs-4">
-                      <small class="text-muted block">Winds</small>
-                      <span>7 mp</span>
-                    </div>
-                  </div>
-                </footer>
-              </section>
-              <section class="panel no-borders">
-                <header class="panel-heading bg-success lter">
-                  <span class="pull-right">Friday</span>
-                  <span class="h4">$540<br>
-                    <small class="text-muted">+1.05(2.15%)</small>
-                  </span>
-                  <div class="text-center padder m-b-n-sm m-t-sm">
-                      <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]"></div>
-                      <div class="sparkline inline" data-type="bar" data-height="45" data-bar-width="6" data-bar-spacing="10" data-bar-color="#92cf5c">9,9,11,10,11,10,12,10,9,10,11,9,8</div>
-                  </div>
-                </header>
-                <div class="panel-body">
-                  <div>
-                    <span class="text-muted">Sales in June:</span>
-                    <span class="h3 block">$2500.00</span>
-                  </div>
-                  <div class="row m-t-sm">
-                    <div class="col-xs-4">
-                      <small class="text-muted block">From market</small>
-                      <span>$1500.00</span>
-                    </div>
-                    <div class="col-xs-4">
-                      <small class="text-muted block">Referal</small>
-                      <span>$600.00</span>
-                    </div>
-                    <div class="col-xs-4">
-                      <small class="text-muted block">Affiliate</small>
-                      <span>$400.00</span>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="panel">
-                <div class="text-center wrapper">
-                  <div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#f2f2f2','#fb6b5b']">25000,23200,15000</div>
-                </div>
-                <ul class="list-group no-radius">
-                  <li class="list-group-item">
-                    <span class="pull-right">25,000</span>
-                    <span class="label bg-success">1</span>
-                    .inc company
-                  </li>
-                  <li class="list-group-item">
-                    <span class="pull-right">23,200</span>
-                    <span class="label bg-danger">2</span>
-                    Gamecorp
-                  </li>
-                  <li class="list-group-item">
-                    <span class="pull-right">15,000</span>
-                    <span class="label bg-light">3</span>
-                    Neosoft company
-                  </li>
-                </ul>
-              </section>
-             
-              <section class="panel clearfix">
-                <div class="panel-body">
-                  <a href="#" class="thumb pull-left m-r">
-                    <img src="images/avatar.jpg" class="img-circle">
-                  </a>
-                  <div class="clear">
-                    <a href="#" class="text-info">@Mike Mcalidek <i class="fa fa-twitter"></i></a>
-                    <small class="block text-muted">2,415 followers / 225 tweets</small>
-                    <a href="#" class="btn btn-xs btn-success m-t-xs">Follow</a>
-                  </div>
-                </div>
-              </section>
+  <head>
+    <title>Farcast</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+  <div class="site-wrap">
 
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    <div class="top-bar py-3 bg-light" id="home-section">
+      <div class="container">
+        <div class="row align-items-center">
+         
+          <div class="col-6 text-left">
+            <ul class="social-media">
+              <li><a href="#" class=""><span class="icon-facebook"></span></a></li>
+              <li><a href="#" class=""><span class="icon-twitter"></span></a></li>
+              <li><a href="#" class=""><span class="icon-instagram"></span></a></li>
+              <li><a href="#" class=""><span class="icon-linkedin"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <p class="mb-0 float-right">
+              <span class="mr-3"><a href="tel://#"> <span class="icon-phone mr-2" style="position: relative; top: 2px;"></span><span class="d-none d-lg-inline-block text-black">(+1) 234 5678 9101</span></a></span>
+              <span><a href="#"><span class="icon-envelope mr-2" style="position: relative; top: 2px;"></span><span class="d-none d-lg-inline-block text-black">shop@yourdomain.com</span></a></span>
+            </p>
+            
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">Farcast<span class="text-primary">.</span> </a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#products-section" class="nav-link">Products</a></li>
+                <li><a href="#about-section" class="nav-link">About Us</a></li>
+                <li><a href="#special-section" class="nav-link">Special</a></li>
+                <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+                <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+
+  
+     
+    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+                        
+            <div class="row mb-4">
+              <div class="col-md-7">
+                <h1>Shop With Us</h1>
+                <p class="mb-5 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
+                <div>
+                  <a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 mb-lg-0 mb-2 d-block d-sm-inline-block">Shop Now</a>
+                  <a href="#" class="btn btn-white py-3 px-5 rounded-0 d-block d-sm-inline-block">Club Membership</a>
+                </div>
+              </div>
             </div>
-          </div>          
-        </section>
-      </section>
-      <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
-    </section>
-    <!-- /.vbox -->
-  </section>
-	<script src="js/jquery.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
-  <!-- Sparkline Chart -->
-  <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
-  <!-- App -->
-  <script src="js/app.js"></script>
-  <script src="js/app.plugin.js"></script>
-  <script src="js/app.data.js"></script>  
-</body>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+
+    
+    <div class="site-section" id="products-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h3 class="section-sub-title">Popular Products</h3>
+            <h2 class="section-title mb-3">Our Products</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/model_2_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist active"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/model_3_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/model_4_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/model_5_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="product-item">
+              <figure>
+                <img src="images/product_1_bg.jpg" alt="Image" class="img-fluid">
+              </figure>
+              <div class="px-4">
+                <h3><a href="#">Wild West Hoodie</a></h3>
+                <div class="mb-3">
+                  <span class="meta-icons mr-3"><a href="#" class="mr-2"><span class="icon-star text-warning"></span></a> 5.0</span>
+                  <span class="meta-icons wishlist"><a href="#" class="mr-2"><span class="icon-heart"></span></a> 29</span>
+                </div>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <div>
+                  <a href="#" class="btn btn-black mr-1 rounded-0">Cart</a>
+                  <a href="#" class="btn btn-black btn-outline-black ml-1 rounded-0">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-blocks-cover inner-page-cover overlay get-notification"  style="background-image: url(images/hero_2.jpg); background-attachment: fixed;" data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center justify-content-center">
+          <form class="col-md-7" method="post">
+            <h2>Get notified on each updates.</h2>
+            <div class="d-flex mb-4">
+              <input type="text" class="form-control rounded-0" placeholder="Enter your email address">
+              <input type="submit" class="btn btn-white btn-outline-white rounded-0" value="Subscribe">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat commodi veniam doloremque ducimus tempora.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6 text-center">
+            <h3 class="section-sub-title">Awesome Products</h3>
+            <h2 class="section-title mb-3">Featured Products</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+          </div>
+        </div>
+        <div class="bg-white py-4 mb-4">
+          <div class="row mx-4 my-4 product-item-2 align-items-start">
+            <div class="col-md-6 mb-5 mb-md-0">
+              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+            </div>
+           
+            <div class="col-md-5 ml-auto product-title-wrap">
+              <span class="number">01.</span>
+              <h3 class="text-black mb-4 font-weight-bold">About This Product</h3>
+              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              
+              <div class="mb-4"> 
+                <h3 class="text-black font-weight-bold h5">Price:</h3>
+                <div class="price"><del class="mr-2">$269.00</del> $69.00</div>
+              </div>
+              <p>
+                <a href="#" class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block">View Details</a>
+                <a href="#" class="btn btn-black rounded-0 d-block d-lg-inline-block">Add To Cart</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white py-4">
+          <div class="row mx-4 my-4 product-item-2 align-items-start">
+            <div class="col-md-6 mb-5 mb-md-0 order-1 order-md-2">
+              <img src="images/product_1_bg.jpg" alt="Image" class="img-fluid">
+            </div>
+           
+            <div class="col-md-5 mr-auto product-title-wrap order-2 order-md-1">
+              <span class="number">02.</span>
+              <h3 class="text-black mb-4 font-weight-bold">About This Product</h3>
+              <p class="mb-4">Et tempora id nostrum saepe amet doloribus deserunt totam officiis cupiditate asperiores quasi accusantium voluptatum dolorem quae sapiente voluptatem ratione odio iure blanditiis earum fuga molestiae alias dicta perferendis inventore!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus soluta assumenda sed optio, error at?</p>
+              
+              <div class="mb-4"> 
+                <h3 class="text-black font-weight-bold h5">Price:</h3>
+                <div class="price"><del class="mr-2">$269.00</del> $69.00</div>
+              </div>
+              <p>
+                <a href="#" class="btn btn-black btn-outline-black rounded-0 d-block mb-2 mb-lg-0 d-lg-inline-block">View Details</a>
+                <a href="#" class="btn btn-black rounded-0 d-block d-lg-inline-block">Add To Cart</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="site-section" id="about-section">
+      <div class="container">
+        <div class="row align-items-lg-center">
+          <div class="col-md-8 mb-5 mb-lg-0 position-relative">
+            <img src="images/about_1.jpg" class="img-fluid" alt="Image">
+            <div class="experience">
+              <span class="year">Trusted Merchant</span>
+              <span class="caption">for 50 years</span>
+            </div>
+          </div>
+          <div class="col-md-3 ml-auto">
+            <h3 class="section-sub-title">Merchant Company</h3>
+            <h2 class="section-title mb-3">About Us</h2>
+            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fuga ipsa, repellat blanditiis nihil, consectetur. Consequuntur eum inventore, rem maxime, nisi excepturi ipsam libero ratione adipisci alias eius vero vel!</p>
+            <p><a href="#" class="btn btn-black btn-black--hover rounded-0">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section border-bottom" id="team-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Team</h3>
+            <h2 class="section-title mb-3">Leadership</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+            <div class="person text-center">
+              <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>John Rooster</h3>
+              <p class="position text-muted">Co-Founder, President</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+            <div class="person text-center">
+              <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>Tom Sharp</h3>
+              <p class="position text-muted">Co-Founder, COO</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
+            <div class="person text-center">
+              <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded w-75 mb-3">
+              <h3>Winston Hodson</h3>
+              <p class="position text-muted">Marketing</p>
+              <p class="mb-4">Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
+              <ul class="ul-social-circle">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-blocks-cover overlay get-notification" id="special-section" style="background-image: url(images/hero_2.jpg); background-attachment: fixed; background-position: top;" data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 text-center">
+            <h3 class="section-sub-title">Special Promo</h3>
+            <h3 class="section-title text-white mb-4">Summer Sale</h3>
+            <p class="mb-5 lead">Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
+            
+            <div id="date-countdown" class="mb-5"></div>
+
+            <p><a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 mb-lg-0 mb-2 d-block d-sm-inline-block">Shop Now</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section bg-light" id="services-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Our Services</h3>
+            <h2 class="section-title mb-3">We Offer Services</h2>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-pie_chart"></span></div>
+              <div>
+                <h3>Business Consulting</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-backspace"></span></div>
+              <div>
+                <h3>Market Analysis</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-av_timer"></span></div>
+              <div>
+                <h3>User Monitoring</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
+              <div>
+                <h3>Seller Consulting</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-business_center"></span></div>
+              <div>
+                <h3>Financial Investment</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="unit-4 d-flex">
+              <div class="unit-4-icon mr-4"><span class="text-primary icon-cloud_done"></span></div>
+              <div>
+                <h3>Financial Management</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p><a href="#">Learn More</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section testimonial-wrap" id="testimonials-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">People Says</h3>
+            <h2 class="section-title mb-3">Testimonials</h2>
+          </div>
+        </div>
+      </div>
+      <div class="slide-one-item home-slider owl-carousel">
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_3.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>John Smith</strong></p>
+
+              
+            </div>
+          </div>
+          <div>
+            <div class="testimonial">
+              
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_2.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              
+              <p class="text-black"><strong>Robert Aguilar</strong></p>
+              
+              
+            </div>
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_4.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>Roger Spears</strong></p>
+
+              
+            </div>
+           
+          </div>
+
+          <div>
+            <div class="testimonial">
+              <figure class="mb-4 d-block align-items-center justify-content-center">
+                <div><img src="images/person_1.jpg" alt="Image" class="w-100 img-fluid mb-3"></div>
+              </figure>
+              <blockquote class="mb-3">
+                <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
+              </blockquote>
+              <p class="text-black"><strong>Kyle McDonald</strong></p>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+    </div>
+
+    
+
+    <div class="site-section" id="blog-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Blog</h3>
+            <h2 class="section-title mb-3">Blog Posts</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/model_1_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/product_1_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+            <div class="h-entry">
+              <img src="images/model_5_bg.jpg" alt="Image" class="img-fluid">
+              <h2 class="font-size-regular"><a href="#" class="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+              <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+              <p><a href="#">Continue Reading...</a></p>
+            </div> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+   
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h3 class="section-sub-title">Contact Form</h3>
+            <h2 class="section-title mb-3">Get In Touch</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 mb-5">
+
+            
+
+            <form action="#" class="p-5 bg-white">
+              
+              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control rounded-0">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label> 
+                  <input type="subject" id="subject" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Write your notes or questions here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-black rounded-0 py-3 px-4">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+  
+    <footer class="site-footer bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+              </div>
+              <div class="col-md-3 ">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 ml-auto">
+            <h2 class="footer-heading mb-4">Featured Product</h2>
+            <a href="#"><img src="images/product_1_bg.jpg" alt="Image" class="img-fluid mb-3"></a>
+            <h4 class="h5">Leather Brown Shoe</h4>
+            <strong class="text-black mb-3 d-inline-block">$60.00</strong>
+            <p><a href="#" class="btn btn-black rounded-0">Add to Cart</a></p>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+
+  
+  <script src="js/main.js"></script>
+    
+  </body>
 </html>
