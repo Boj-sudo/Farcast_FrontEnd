@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Web Application | todo</title>
+  <title>PARENTS</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -258,7 +258,7 @@
                     <a href="docs.html">Help</a>
                   </li>
                   <li>
-                    <a href="signin.html">Logout</a>
+                    <a href="logout.php">Logout</a>
                   </li>
                 </ul>
               </li>

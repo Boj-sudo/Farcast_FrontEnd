@@ -1,7 +1,7 @@
 <?php 
   session_start();
   if(isset($_SESSION["user"])) {
-    header("Location: index.php");
+    header("Location: student_dashboard.php");
   }
 ?>
 
@@ -59,6 +59,16 @@
                   session_start();
                   $_SESSION["user"] = "yes";
                   header("Location: student_dashboard.php");
+                  /*if ($_SESSION['user']['usertype'] == 1) {
+                    session_start();
+                    $_SESSION["user"] = "yes";
+                    header("Location: student_dashboard.php");
+                  } else if ($_SESSION['user']['usertype'] == 2) {
+                    header("Location: teacher_dashboard.php");
+                  } else if ($_SESSION['user']['usertype'] == 3) {
+                    header("Location: parent_dashboard.php");
+                  }*/
+                    
                   die();
                 } else {
                   echo "<div class='alert alert-danger'>Password or username do not match.</div>";

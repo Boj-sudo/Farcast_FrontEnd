@@ -38,6 +38,7 @@
           <?php
             $first_name = $last_name = $user_name = "";
             $password = $passowrd_repeat = "";
+            $user_type = "";
 
             if (isset($_POST['submit'])) {
               require('server/util.php');
@@ -49,6 +50,8 @@
               $last_name = $util->strip($_POST['lastname']);
               $user_name = $util->strip_username($_POST['username']);
 
+              $user_type = $util->strip($_POST['type']);
+
               $grade = intval($_POST['grade']);
 
               $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -56,7 +59,7 @@
 
               $subject_list = $_POST['subjects'];
 
-              if (empty($first_name) OR empty($last_name) OR empty($user_name) OR empty($grade) OR empty($subject_list) OR empty($password) OR empty($passowrd_repeat)) {
+              if (empty($first_name) OR empty($last_name) OR empty($user_name) OR empty($user_type) OR empty($grade) OR empty($subject_list) OR empty($password) OR empty($passowrd_repeat)) {
                 echo "<div class='alert alert-danger my-2 p-2 text-center' role='alert'>
                         All fields are required.
                       </div>";
@@ -85,7 +88,7 @@
                 $userID = uniqid("LNR-");
 
                 $query = "INSERT INTO users (userID, name, surname, grade, username, password, type, language)
-                          VALUES ('$userID', '$first_name', '$last_name', '$grade', '$user_name', '$passwordHash', 'Learner', 'English');";
+                          VALUES ('$userID', '$first_name', '$last_name', '$grade', '$user_name', '$passwordHash', '$user_type', 'English');";
 
                 $result = mysqli_query($conn, $query);
 
@@ -140,6 +143,15 @@
             <div class="form-group">
               <label class="control-label">Username</label>
               <input type="text" placeholder="eg. Your username" class="form-control" name="username" value="<?php echo $user_name; ?>">
+            </div>
+
+            <div class="form-group">
+              <label class="control-label">Usertype</label>
+              <select id="grade" name="type" class="form-control" aria-label="Default select example">
+									<option value="learner" selected>Learner</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="parent">Parent</option>
+              </select>
             </div>
 
             <div class="form-group">
